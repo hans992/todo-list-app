@@ -1,0 +1,108 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+h1 {
+    color: #4a6fa5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Todo List Styles */
+.todo-list {
+    padding: 0;
+    list-style: none;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.todo-list li {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+}
+
+.todo-list li:last-child {
+    border-bottom: none;
+}
+
+/* Checkbox and Label Styles */
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #4a6fa5;
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+input[type="checkbox"]:checked + label {
+    color: #8bbabb;
+    text-decoration: line-through;
+}
+
+/* Sub-item Styles */
+.sub-item {
+    display: none;
+    padding-left: 0;
+    margin-top: 10px;
+    list-style: none;
+}
+
+input[type="checkbox"]:checked ~ .sub-item {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Link Styles */
+.sub-item-link {
+    display: inline-block;
+    color: #6b8cae;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background-color: #f0f4f8;
+}
+
+/* Visited State */
+.sub-item-link:visited {
+    color: #9a7aa0;
+}
+
+/* Hover State */
+.sub-item-link:hover {
+    color: #ff7e5f;
+    background-color: #ffe8e0;
+    transform: translateX(5px);
+}
+
+/* Focus State */
+.sub-item-link:focus {
+    outline: 3px solid #ffd166;
+    outline-offset: 2px;
+}
+
+/* Active State */
+.sub-item-link:active {
+    color: #4ecdc4;
+    background-color: #e0f7fa;
+}
